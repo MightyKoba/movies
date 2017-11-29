@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "home.html"%}
+{% block title %}Members{% endblock %}
+
+{% block head%}
+  {{ super() }}
+{% endblock%}
+
+{% block page_content%}
+  <!-- Page Content -->
+  <div style="text-align: center;" class="container">
+    
+    <p>Developed By: <a id="developer1" href="https://github.com/MightyKoba" data-toggle="tooltip" data-placement="top" title="University of Delaware Junior">Ernest Nguatem</a>.</p>
+      <p>Developed By: <a id="developer2" href="https://github.com/afecondo" data-toggle="tooltip" data-placement="top" title="University of Delaware Junior">Anthony Fecondo</a>.</p>
+        <p>Developed By: <a id="developer3" href="https://github.com/bmunce" data-toggle="tooltip" data-placement="top" title="University of Delaware Junior">Brandon Munce</a>.</p>
+
+  </div>
+{% endblock%}
+
+{% block scripts%}
+  {{super()}}
+  <script>
+  $(document).ready(function () {
+    $('#developer1').tooltip()
+      $('#developer2').tooltip()
+        $('#developer3').tooltip()
+  });
+  </script>
+{% endblock%}

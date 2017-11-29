@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block head %}
+  <title>{% block title%}{% endblock%} -MovieDatabase</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ url_for('static', filename='img/r_logo.jpg') }}" type="image/x-icon"/>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/r_logo.jpg') }}" type="image/x-icon"/>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  <!-- Fontawesome CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Resume CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/myresume.css') }}">
+  {% endblock%}
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container js-scroll-trigger">
+      <a class="navbar-brand" href="/">
+      Movie Database
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="C:\Users\Koba\my-resume\static\img\mightykoba.png" alt="">
+       </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav">
+           <li class="nav-item">
+             <a class="nav-link js-scroll-trigger" href="/">Home</a>
+             <span class="sr-only">(Current)</span>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link js-scroll-trigger" href="/members">Members</a>
+           </li>
+         </ul>
+       </div>
+    </div>
+  </nav>
+
+
+
+  
+
+
+
+  {% for category, message in get_flashed_messages(with_categories=true) %}
+      <div class="alert alert-{{category}}">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+      </div>
+  {% endfor %}
+  {% block page_content%}
+  {% endblock%}
+
+  {% block scripts%}
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  {% endblock%}
+</body>
+
+
+</html>
