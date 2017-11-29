@@ -10,7 +10,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/members')
+@app.route('/members') 
 def about():
     return render_template('members.html')
 
