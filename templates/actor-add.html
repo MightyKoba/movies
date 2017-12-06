@@ -1,0 +1,21 @@
+{% extends "home.html"%}
+{% block title %}Add Actors or Actresses{% endblock %}
+{% block page_content%}
+
+  <!-- Page Content -->
+  <div class="container">
+    <h1 class="mt-5"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Add Actors/Actresses:</h1>
+    <form action="/actor/add" method="post">
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" type="text" name="name" placeholder="Name of the Actor or Actress" required="true">
+      </div>
+      <div class="form-group">
+        <label>Age</label>
+        <input class="form-control" name="age" placeholder="Age of the Actor or Actress" required="true">
+      </div>
+      <button type="submit" class="btn btn-primary">Add Actor/Actress</button>
+    </form>
+  </div>
+
+{% endblock%}

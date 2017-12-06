@@ -1,0 +1,42 @@
+{% extends "home.html"%}
+{% block title %}Delete Movie{% endblock %}
+{% block page_content%}
+
+  <!-- Page Content -->
+  <div class="container">
+    <h1 class="mt-5"><i class="fa fa-book" aria-hidden="true"></i> Delete the following movie:</h1>
+    <form action="/movie/delete/{{movie.id}}" method="post">
+      <div class="form-group">
+        <label>Title</label>
+        <input class="form-control" type="text" name="title" value="{{movie.title}}" required="true" readonly="true">
+      </div>
+      <div class="form-group">
+        <label>Genre</label>
+        <input class="form-control" type="text" name="genre" value="{{movie.genre}}" readonly="true">
+      </div>
+      <div class="form-group">
+        <label>Year</label>
+        <input class="form-control" name="year" value="{{movie.year}}" readonly="true">
+      </div>
+      <div class="form-group">
+        <label>Actor</label>
+        <input class="form-control" type="text" name="actor" value="{{movie.actor.name}}" readonly="true">
+      </div>
+    <button type="submit" class="btn btn-danger" id="delete_btn">Delete</button>
+  </form>
+</div>
+
+
+{% endblock%}
+{% block scripts%}
+  {{super()}}
+  <script>
+  $(document).ready(function () {
+    $('#delete_btn').click(function () {
+      if (! confirm('Are you sure you want to delete this movie?')) {
+        return false;
+      }
+    })
+  });
+  </script>
+{% endblock%}

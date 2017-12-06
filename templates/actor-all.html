@@ -1,0 +1,40 @@
+{% extends "home.html"%}
+{% block title %}All Actors and Actresses{% endblock %}
+{% block page_content%}
+
+  <!-- Page Content -->
+  <div class="container">
+    <h1 class="mt-5"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Actors/Actresses:</h1>
+    <div class="row bottom-margin">
+      <a href="/actor/add" class="btn btn-primary" role="button" aria-disabled="true">Add Actors/Actresses</a>
+    </div>
+    {% if actors %}
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for actor in actors %}
+          <tr>
+              <th scope="row">{{actor.id}}</th>
+              <td>{{actor.name}}</td>
+              <td>{{actor.age}}</td>
+              <td>
+                <a href="/actor/edit/{{actor.id}}" class="btn btn-success" role="button" aria-disabled="true">Edit</a>
+                <a href="/actor/delete/{{actor.id}}" class="btn btn-danger" role="button">Delete</a>
+              </td>
+          </tr>
+          {% endfor%}
+        </tbody>
+      </table>
+    {% else %}
+      <h3>there are no actors or actresses in the database yet.</h3>
+    {% endif %}
+  </div>
+
+{% endblock%}

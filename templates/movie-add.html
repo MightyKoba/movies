@@ -1,0 +1,37 @@
+{% extends "home.html"%}
+{% block title %}Add Movies{% endblock %}
+{% block page_content%}
+
+  <!-- Page Content -->
+  <div class="container">
+    <h1 class="mt-5"><i class="fa fa-book" aria-hidden="true"></i> Add Movies:</h1>
+    <form action="/movie/add" method="post">
+      <div class="form-group">
+        <label>Movie Title</label>
+        <input class="form-control" type="text" name="title" placeholder="Name of the Movie" required="true">
+      </div>
+      <div class="form-group">
+        <label>Genre</label>
+        <input class="form-control" type="text" name="genre" placeholder="Genre of the Movie" required="true">
+      </div>
+      <div class="form-group">
+        <label>Year</label>
+        <input class="form-control" name="year" placeholder="Year of the Movie" required="true">
+      </div>
+      <div class="form-group">
+        <label>Actor</label>
+        <select class="form-control" name="actor">
+          {% for actor in actors %}
+              <option>{{actor.name}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        Actor not in the list? <a href="/actor/add" class="btn btn-success" role="button" aria-disabled="true">Add Actors</a>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Add Movie</button>
+    </form>
+  </div>
+
+{% endblock%}
