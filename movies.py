@@ -19,7 +19,7 @@ class Actor(db.Model):
     age = db.Column(db.Integer)
     movies = db.relationship('Movie', backref='actor', cascade="delete")
 
-class Movie(db.Model):
+class Movie(db.Model): 
     __tablename__ = 'movies'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(256))
