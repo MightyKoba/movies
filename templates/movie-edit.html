@@ -16,31 +16,16 @@
       </div>
       <div class="form-group">
           <label>Year</label>
-          <select class="form-control" name="year">
-            {% for i in range(1950, 2025) %}
-              {% if i == course.year %}
-                <option selected="selected">{{i}}</option>
-              {% else %}
-                <option>{{i}}</option>
-              {% endif %}
-            {% endfor %}
-          </select>
-        </div>
+        <input class="form-control" name="year" value="{{movie.year}}" readonly="true">
+      </div>
       <div class="form-group">
       <label>Actor</label>
-      <select class="form-control" name="actor">
-        {% for actor in actors %}
-          {% if actor == movie.actor %}
-            <option selected="selected">{{actor.name}}</option>
-          {% else %}
-            <option>{{actor.name}}</option>
-          {% endif %}
-        {% endfor %}
-      </select>
-    </div>
-    <div class="form-group">
+        <input class="form-control" type="text" name="actor" value="{{movie.actor.name}}" readonly="true">
+      </div>
+      </div>
+      <div class="form-group">
       Actor not in the list? <a href="/actor/add" class="btn btn-success" role="button" aria-disabled="true">Add Actors</a>
-    </div>
+      </div>
     <button type="submit" class="btn btn-danger" id="delete_btn">Delete</button>
   </form>
 </div>

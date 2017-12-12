@@ -118,7 +118,6 @@ def add_movies():
 def edit_movie(id):
     movie = Movie.query.filter_by(id=id).first()
     actors = Actor.query.all()
-    actresses = Actress.query.all()
     if request.method == 'GET':
         return render_template('movie-edit.html', movie=movie, actors=actors)
     if request.method == 'POST':
@@ -137,7 +136,6 @@ def edit_movie(id):
 def delete_movie(id):
     movie = Movie.query.filter_by(id=id).first()
     actors = Actor.query.all()
-    actresses = Actress.query.all()
     if request.method == 'GET':
         return render_template('movie-delete.html', movie=movie, actors=actors)
     if request.method == 'POST':
