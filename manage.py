@@ -13,7 +13,7 @@ def deploy():
     db.session.add(damon)
     db.session.add(titanic)
 
-    db.session.commit()
+    db.session.commit() 
 
 
 if __name__ == "__main__":

@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
+app = Flask(__name__) 
 app.config['SECRET_KEY'] = 'hard to guess secure key'
 
 # setup SQLAlchemy
